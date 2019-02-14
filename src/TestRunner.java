@@ -79,7 +79,7 @@ public class TestRunner
 		        }
 			}
 			catch (ClassNotFoundException e)
-			{
+		 	{
 				String errorMessage = String.format("Could not find the class: %s, check the testClasses variable"
 						+ "and make sure the name matches exactly.", className);
 				System.out.println(errorMessage);

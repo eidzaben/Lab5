@@ -34,7 +34,26 @@ public class Calculator
      */
     protected static int calculateTwoTokens(String[] tokens) throws NumberFormatException, CalculatorException
     {
-        int a = Integer.parseInt(tokens[1]); // Throws NumberFormatException if the second token is not an int value.
+    	String calc = " ";
+    	int a = 0;
+    	int ans = 0;
+    	try {
+    		calc = tokens[0];
+    		a = Integer.parseInt(tokens[1]); // Throws NumberFormatException if the second token is not an int value.
+    	} catch(NumberFormatException nfe) {
+    		System.out.println("NFE exception");
+   	}/*  catch(CalculatorException ce) {
+    		System.out.println("CE exception");
+    	}
+    	*/
+    	
+    	if (calc.equalsIgnoreCase("halve")) {
+    		ans = a/2;
+    	} else if(calc.equalsIgnoreCase("negate")) {
+    		ans = -1 * a;
+    	}
+    	
+    	return ans;
         // TODO: complete this...
     }
 
@@ -144,5 +163,19 @@ public class Calculator
         // TODO: complete this...
         // Hint: you should try and call execute(). If execute encounters an error, it will throw an exception. This
         // method will catch those exceptions and respond accordingly.
+    	String[] tokens = input.split(" ");
+    	try {
+			execute(tokens);
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Number Format Exception");
+			e.printStackTrace();
+		} catch (CalculatorException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("calculator exception");
+		}
+    	
+    	
     }
 }
