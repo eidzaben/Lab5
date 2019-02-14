@@ -207,10 +207,10 @@ public class Calculator {
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Input number cannot be parsed to an int. Please try again.");
-			e.printStackTrace();
+			//e.printStackTrace();
 		} catch (CalculatorException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 			System.out.println(String.format("Calculator Exception, message is: %s", e.getMessage()));
 		} catch (ArithmeticException e) {
 			System.out.println("Attempted to divide by 0. Please try again.");

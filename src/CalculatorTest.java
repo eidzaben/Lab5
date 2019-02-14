@@ -28,6 +28,14 @@ public class CalculatorTest {
     public void calculateTwoTokensTestValidHalve() throws AssertException
     {
         // TODO: complete this test...
+    	try
+    	{
+    	int result = Calculator.calculateTwoTokens(new String[] {"halve", "6"});
+    	Assert.assertEquals(3, result);
+    	} catch (Exception e) 
+    	{
+    		Assert.fail("Legal expression threw an Exception: " + e.getMessage());
+    	}
     }
 
     /**
