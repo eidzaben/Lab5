@@ -54,7 +54,7 @@ public class Calculator
     	
     	
     	
-        // TODO: complete this...
+       
     
 
     /**
@@ -145,7 +145,8 @@ public class Calculator
         	throw new CalculatorException("Illegal Token Length, type=0");
         case 1:
         	if (tokens[0].equalsIgnoreCase("quit")) {
-        		return Integer.MIN_VALUE;
+        		//return Integer.MIN_VALUE;
+        		System.exit(0);
         	} else {
         		throw new CalculatorException("Illegal Command, type=1");
         	}
@@ -197,6 +198,8 @@ public class Calculator
     	int ans = 0;
     	try {
     		ans = execute(tokens);
+    		return String.format("The result is: %d", ans);
+
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Input number cannot be parsed to an int. Please try again.");
@@ -204,12 +207,11 @@ public class Calculator
 		} catch (CalculatorException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("calculator exception");
+			System.out.println(String.format("Calculator Exception, message is: %s", e.getMessage()));
 		} catch (ArithmeticException e) {
 			System.out.println("Attempted to divide by 0. Please try again.");
 		}
-    	
-		return String.format("The result is: %d", ans);
+    	return null;
     	
     	
     	
