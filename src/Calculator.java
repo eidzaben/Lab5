@@ -37,25 +37,25 @@ public class Calculator
     	String calc = " ";
     	int a = 0;
     	int ans = 0;
-    	try {
+    	
     		calc = tokens[0];
     		a = Integer.parseInt(tokens[1]); // Throws NumberFormatException if the second token is not an int value.
-    	} catch(NumberFormatException nfe) {
-    		System.out.println("NFE exception");
-   	}/*  catch(CalculatorException ce) {
-    		System.out.println("CE exception");
-    	}
-    	*/
-    	
     	if (calc.equalsIgnoreCase("halve")) {
     		ans = a/2;
     	} else if(calc.equalsIgnoreCase("negate")) {
     		ans = -1 * a;
+    	} else {
+    		throw new CalculatorException("Illegal command");
+    		
     	}
-    	
     	return ans;
+}
+    	
+    	
+    	
+    	
         // TODO: complete this...
-    }
+    
 
     /**
      * Takes an input command of three string tokens and performs the appropriate calculator command.
@@ -125,6 +125,13 @@ public class Calculator
         switch(tokens.length)
         {
             // TODO: complete this...
+        case 0: 
+        	
+        case 1:
+        	
+        case 2:
+        
+        case 3:
         }
 
     }
