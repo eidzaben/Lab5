@@ -89,6 +89,22 @@ public class Calculator
             throws ArithmeticException, NumberFormatException, CalculatorException
     {
         // TODO: complete this...
+    	int ans = 0;
+    	int num1 = Integer.parseInt(tokens[0]);
+    	String operation = tokens[1];
+    	int num2 = Integer.parseInt(tokens[2]);
+    	
+    	if (operation.equals("+")) {
+    		ans = num1 + num2;
+    	} else if (operation.equals("-")) {
+    		ans = num1 - num2;
+    	} else if (operation.equals("/")) {
+    		ans = num1 / num2;
+    	} else {
+    		throw new CalculatorException("Illegal Command");
+    	}
+    	
+    	return ans;
     }
 
     /**
@@ -126,9 +142,13 @@ public class Calculator
         {
             // TODO: complete this...
         case 0: 
-        	
+        	throw new CalculatorException("Illegal Token Length");
         case 1:
-        	
+        	if (tokens[0].equalsIgnoreCase("quit")) {
+        		return Integer.MIN_VALUE;
+        	} else {
+        		throw new CalculatorException("Illegal Command");
+        	}
         case 2:
         
         case 3:
