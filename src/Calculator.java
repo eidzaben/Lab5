@@ -142,16 +142,19 @@ public class Calculator
         {
             // TODO: complete this...
         case 0: 
-        	throw new CalculatorException("Illegal Token Length");
+        	throw new CalculatorException("Illegal Token Length, type=0");
         case 1:
         	if (tokens[0].equalsIgnoreCase("quit")) {
         		return Integer.MIN_VALUE;
         	} else {
-        		throw new CalculatorException("Illegal Command");
+        		throw new CalculatorException("Illegal Command, type=1");
         	}
         case 2:
-        
+        return calculateTwoTokens(tokens);
         case 3:
+        return calculateThreeTokens(tokens);
+        default:
+        throw new CalculatorException("Illegal Token Length, type=0");
         }
 
     }
