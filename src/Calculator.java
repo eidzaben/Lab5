@@ -194,17 +194,23 @@ public class Calculator
         // Hint: you should try and call execute(). If execute encounters an error, it will throw an exception. This
         // method will catch those exceptions and respond accordingly.
     	String[] tokens = input.split(" ");
+    	int ans = 0;
     	try {
-			execute(tokens);
+    		ans = execute(tokens);
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Number Format Exception");
+			System.out.println("Input number cannot be parsed to an int. Please try again.");
 			e.printStackTrace();
 		} catch (CalculatorException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("calculator exception");
+		} catch (ArithmeticException e) {
+			System.out.println("Attempted to divide by 0. Please try again.");
 		}
+    	
+		return String.format("The result is: %d", ans);
+    	
     	
     	
     }
