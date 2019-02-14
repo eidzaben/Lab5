@@ -1,0 +1,15 @@
+
+
+# Eclipse files and folders
+
+build
+
+bin
+
+doc
+
+.settings
+.classpath
+
+.project
+*.zip
