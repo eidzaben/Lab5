@@ -205,18 +205,18 @@ public class Calculator {
 			return String.format("The result is: %d", ans);
 
 		} catch (ArithmeticException e) {
-			System.out.println("Attempted to divide by 0. Please try again.");
+			return "Attempted to divide by 0. Please try again.";
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Input number cannot be parsed to an int. Please try again.");
+			return "Input number cannot be parsed to an int. Please try again.";
 			//e.printStackTrace();
 		} catch (CalculatorException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
-			System.out.println(String.format("Calculator Exception, message is: %s", e.getMessage()));
+			return String.format("Calculator Exception, message is: %s", e.getMessage());
 		} 
 		// this needs to be fixed
-		return null;
+		//return null; 
 
 	}
 }
