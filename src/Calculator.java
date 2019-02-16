@@ -147,11 +147,13 @@ public class Calculator {
 			throw new CalculatorException("Illegal Token Length");
 		case 1:
 			if (tokens[0].equalsIgnoreCase("quit")) {
-				// return Integer.MIN_VALUE;
+				
 				System.exit(0);
+				
 			} else {
 				throw new CalculatorException("Illegal Command");
 			}
+			return Integer.MIN_VALUE;
 		case 2:
 			return calculateTwoTokens(tokens);
 		case 3:
