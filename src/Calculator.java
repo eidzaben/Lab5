@@ -47,7 +47,7 @@ public class Calculator {
 		} else if (calc.equalsIgnoreCase("negate")) {
 			ans = -1 * a;
 		} else {
-			throw new CalculatorException("Illegal command");
+			throw new CalculatorException("Illegal Command");
 
 		}
 		return ans;
