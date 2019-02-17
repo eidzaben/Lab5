@@ -24,4 +24,4 @@ Actual Time (minutes):
 3. 25
 4. 40
 5. 60
-*/}S
+*/}
